@@ -24,7 +24,7 @@ public class Photos {
     private String total;
     @SerializedName("photo")
     @Expose
-    private List<Photo> photo = new ArrayList<Photo>();
+    private List<Photo2> photo = new ArrayList<Photo2>();
     @SerializedName("firstdatetaken")
     @Expose
     private Firstdatetaken firstdatetaken;
@@ -94,14 +94,14 @@ public class Photos {
     /**
      * @return The photo
      */
-    public List<Photo> getPhoto() {
+    public List<Photo2> getPhoto() {
         return photo;
     }
 
     /**
      * @param photo The photo
      */
-    public void setPhoto(List<Photo> photo) {
+    public void setPhoto(List<Photo2> photo) {
         this.photo = photo;
     }
 
@@ -146,6 +146,5 @@ public class Photos {
     public void setCount(Count count) {
         this.count = count;
     }
-
 
 }
