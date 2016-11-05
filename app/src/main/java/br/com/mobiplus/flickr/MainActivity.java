@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import br.com.mobiplus.flickr.model.PeopleInfoResult;
+import br.com.mobiplus.flickr.model.PhotoCommentsResult;
 import br.com.mobiplus.flickr.model.PhotoInfoResult;
 import br.com.mobiplus.flickr.model.PhotoSearchResult;
 import br.com.mobiplus.flickr.rest.RetrofitFacade;
@@ -48,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(PeopleInfoResult peopleInfoResult, Response response) {
                 Toast.makeText(MainActivity.this, "" + peopleInfoResult, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                handleError(error);
+            }
+        });
+
+        new RetrofitFacade(getApplicationContext()).requestPhotoCommentList("30737682925", new Callback<PhotoCommentsResult>() {
+            @Override
+            public void success(PhotoCommentsResult photoCommentsResult, Response response) {
+                Toast.makeText(MainActivity.this, "" + photoCommentsResult, Toast.LENGTH_SHORT).show();
             }
 
             @Override

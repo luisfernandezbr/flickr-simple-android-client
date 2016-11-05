@@ -3,6 +3,7 @@ package br.com.mobiplus.flickr.rest;
 import java.util.Map;
 
 import br.com.mobiplus.flickr.model.PeopleInfoResult;
+import br.com.mobiplus.flickr.model.PhotoCommentsResult;
 import br.com.mobiplus.flickr.model.PhotoInfoResult;
 import br.com.mobiplus.flickr.model.PhotoSearchResult;
 import retrofit.Callback;
@@ -23,4 +24,7 @@ public interface RetrofitUrlMapping {
 
     @GET("/")
     void getPeopleInfo(@QueryMap Map<String, String> queryParams, Callback<PeopleInfoResult> callback);
+
+    @GET("/")
+    void getPhotoCommentList(@QueryMap Map<String, String> queryParams, Callback<PhotoCommentsResult> callback);
 }
