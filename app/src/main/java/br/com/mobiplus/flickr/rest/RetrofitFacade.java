@@ -28,6 +28,7 @@ public class RetrofitFacade {
     private Context context;
     private RetrofitRequestInterceptor requestInterceptor;
     private RestAdapter gsonRestAdapter;
+    private RetrofitUrlMapping service;
 
     public RetrofitFacade(Context context) {
         this.context = context.getApplicationContext();
@@ -44,6 +45,8 @@ public class RetrofitFacade {
                 .setRequestInterceptor(requestInterceptor)
                 .setClient(new OkClient(okHttpClient))
                 .build();
+
+        this.service = gsonRestAdapter.create(RetrofitUrlMapping.class);
     }
 
     public void requestPhotosSearch(String searchTerm, Callback<PhotoSearchResult> callback) {
@@ -54,7 +57,6 @@ public class RetrofitFacade {
         queryParams.put("tags", searchTerm);
         queryParams.put("sort","interestingness-desc");
 
-        RetrofitUrlMapping service = gsonRestAdapter.create(RetrofitUrlMapping.class);
         service.getPhotosSearch(queryParams, callback);
     }
 
@@ -65,7 +67,6 @@ public class RetrofitFacade {
         queryParams.put("method", method);
         queryParams.put("photo_id", photoId);
 
-        RetrofitUrlMapping service = gsonRestAdapter.create(RetrofitUrlMapping.class);
         service.getPhotosInfo(queryParams, callback);
     }
 
@@ -76,7 +77,6 @@ public class RetrofitFacade {
         queryParams.put("method", method);
         queryParams.put("user_id", userId);
 
-        RetrofitUrlMapping service = gsonRestAdapter.create(RetrofitUrlMapping.class);
         service.getPeopleInfo(queryParams, callback);
     }
 
@@ -86,8 +86,7 @@ public class RetrofitFacade {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("method", method);
         queryParams.put("photo_id", photoId);
-
-        RetrofitUrlMapping service = gsonRestAdapter.create(RetrofitUrlMapping.class);
+        
         service.getPhotoCommentList(queryParams, callback);
 
     }
