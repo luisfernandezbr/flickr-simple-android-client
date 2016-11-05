@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import br.com.mobiplus.flickr.model.PhotoInfoResult;
 import br.com.mobiplus.flickr.model.PhotoSearchResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -53,5 +54,16 @@ public class RetrofitFacade {
 
         RetrofitUrlMapping service = gsonRestAdapter.create(RetrofitUrlMapping.class);
         service.getPhotosSearch(queryParams, callback);
+    }
+
+    public void requestPhotoInfo(String photoId, Callback<PhotoInfoResult> callback) {
+        String method = "flickr.photos.getInfo";
+
+        Map<String, String> queryParams = new HashMap<>();
+        queryParams.put("method", method);
+        queryParams.put("photo_id", photoId);
+
+        RetrofitUrlMapping service = gsonRestAdapter.create(RetrofitUrlMapping.class);
+        service.getPhotosInfo(queryParams, callback);
     }
 }

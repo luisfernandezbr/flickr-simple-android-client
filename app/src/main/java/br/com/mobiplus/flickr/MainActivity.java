@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import br.com.mobiplus.flickr.model.PhotoInfoResult;
 import br.com.mobiplus.flickr.model.PhotoSearchResult;
 import br.com.mobiplus.flickr.rest.RetrofitFacade;
 import retrofit.Callback;
@@ -21,6 +22,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(PhotoSearchResult photoSearchResult, Response response) {
                 Toast.makeText(MainActivity.this, "" + photoSearchResult, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Toast.makeText(MainActivity.this, "" + error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        new RetrofitFacade(getApplicationContext()).requestPhotoInfo("30737682925", new Callback<PhotoInfoResult>() {
+            @Override
+            public void success(PhotoInfoResult photoInfoResult, Response response) {
+                Toast.makeText(MainActivity.this, "" + photoInfoResult, Toast.LENGTH_SHORT).show();
             }
 
             @Override

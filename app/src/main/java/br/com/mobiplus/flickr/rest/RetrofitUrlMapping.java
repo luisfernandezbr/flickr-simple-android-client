@@ -2,6 +2,7 @@ package br.com.mobiplus.flickr.rest;
 
 import java.util.Map;
 
+import br.com.mobiplus.flickr.model.PhotoInfoResult;
 import br.com.mobiplus.flickr.model.PhotoSearchResult;
 import retrofit.Callback;
 import retrofit.http.GET;
@@ -15,4 +16,7 @@ public interface RetrofitUrlMapping {
 
     @GET("/")
     void getPhotosSearch(@QueryMap Map<String, String> options, Callback<PhotoSearchResult> callback);
+
+    @GET("/")
+    void getPhotosInfo(@QueryMap Map<String, String> queryParams, Callback<PhotoInfoResult> callback);
 }
