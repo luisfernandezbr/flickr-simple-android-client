@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import br.com.mobiplus.flickr.model.PeopleInfoResult;
 import br.com.mobiplus.flickr.model.PhotoInfoResult;
 import br.com.mobiplus.flickr.model.PhotoSearchResult;
 import br.com.mobiplus.flickr.rest.RetrofitFacade;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(MainActivity.this, "" + error.getMessage(), Toast.LENGTH_SHORT).show();
+                handleError(error);
             }
         });
 
@@ -39,8 +40,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(MainActivity.this, "" + error.getMessage(), Toast.LENGTH_SHORT).show();
+                handleError(error);
             }
         });
+
+        new RetrofitFacade(getApplicationContext()).requestUserInfo("40318476@N00", new Callback<PeopleInfoResult>() {
+            @Override
+            public void success(PeopleInfoResult peopleInfoResult, Response response) {
+                Toast.makeText(MainActivity.this, "" + peopleInfoResult, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                handleError(error);
+            }
+        });
+    }
+
+    private void handleError(RetrofitError error) {
+        Toast.makeText(MainActivity.this, "" + error.getMessage(), Toast.LENGTH_SHORT).show();
     }
 }
