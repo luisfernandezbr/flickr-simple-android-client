@@ -38,6 +38,9 @@ public class Location {
     @SerializedName("woeid")
     @Expose
     private String woeid;
+    @SerializedName("_content")
+    @Expose
+    private String content;
 
     /**
      * 
@@ -217,6 +220,23 @@ public class Location {
      */
     public void setWoeid(String woeid) {
         this.woeid = woeid;
+    }
+    /**
+     *
+     * @return
+     *     The content
+     */
+    public String getContent() {
+        return content;
+    }
+
+    /**
+     *
+     * @param content
+     *     The _content
+     */
+    public void setContent(String content) {
+        this.content = content;
     }
 
 }
