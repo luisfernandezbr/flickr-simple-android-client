@@ -3,10 +3,11 @@ package br.com.mobiplus.flickr.mvp.view;
 import android.app.Activity;
 import android.support.annotation.IdRes;
 
-import br.com.mobiplus.flickr.PhotoDetailsActivity;
 import br.com.mobiplus.flickr.R;
+import br.com.mobiplus.flickr.mvp.Events;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
+import br.com.mobiplus.mvp.otto.BusProvider;
 import br.com.mobiplus.mvp.view.BaseView;
 import br.com.mobiplus.simplerecylerview.SimpleLinearRecyclerView;
 import br.com.mobiplus.simplerecylerview.adapter.OnItemClickListener;
@@ -39,7 +40,7 @@ public class HomeViewImpl extends BaseView implements HomeView {
 
             @Override
             public void onItemClick(Photo photo, @IdRes int idViewClicked) {
-                PhotoDetailsActivity.start(getActivity(), photo);
+                BusProvider.getInstance().post(new Events.OnPhotoClickedEvent(photo));
             }
         });
     }

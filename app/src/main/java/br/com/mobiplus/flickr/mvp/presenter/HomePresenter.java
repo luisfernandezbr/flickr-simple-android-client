@@ -3,6 +3,10 @@ package br.com.mobiplus.flickr.mvp.presenter;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.squareup.otto.Subscribe;
+
+import br.com.mobiplus.flickr.PhotoDetailsActivity;
+import br.com.mobiplus.flickr.mvp.Events;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import br.com.mobiplus.flickr.mvp.view.HomeView;
 import br.com.mobiplus.flickr.mvp.view.HomeViewImpl;
@@ -20,14 +24,16 @@ import retrofit.client.Response;
 public class HomePresenter extends BasePresenter {
 
     private HomeView homeView;
+    private Activity activity;
 
     public HomePresenter(Activity activity) {
-        this.initMvp(activity);
+        this.activity = activity;
+        this.initMvp();
     }
 
-    private void initMvp(Activity activity) {
-        this.homeView = new HomeViewImpl(activity);
-        this.loadData(activity);
+    private void initMvp() {
+        this.homeView = new HomeViewImpl(this.activity);
+        this.loadData(this.activity);
     }
 
     private void loadData(Activity activity) {
@@ -42,6 +48,11 @@ public class HomePresenter extends BasePresenter {
                 homeView.onLoadDataError(error.getResponse().getStatus(), error.getMessage());
             }
         });
+    }
+
+    @Subscribe
+    public void onPhotoClickedEvent(Events.OnPhotoClickedEvent event) {
+        PhotoDetailsActivity.start(this.activity, event.getPhoto());
     }
 
     @Override
