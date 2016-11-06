@@ -1,0 +1,3 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('simple-recyclerview-library-release.aar'))
+// from https://github.com/luisfernandezbr/simple-recyclerview

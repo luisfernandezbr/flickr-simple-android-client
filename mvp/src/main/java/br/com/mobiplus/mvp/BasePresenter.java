@@ -1,8 +1,6 @@
 package br.com.mobiplus.mvp;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.PersistableBundle;
 
 /**
  * Created by luis.fernandez on 11/6/16.

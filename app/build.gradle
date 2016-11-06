@@ -30,6 +30,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
 
     compile project(':mvp')
+    compile project(':simple-recyclerview-library-release')
 
     // Test dependencies
     testCompile 'junit:junit:4.12'
