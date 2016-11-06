@@ -30,7 +30,12 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
 
     compile project(':mvp')
+
+
     compile project(':simple-recyclerview-library-release')
+    //compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:recyclerview-v7:25.0.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     // Test dependencies
     testCompile 'junit:junit:4.12'
