@@ -11,6 +11,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import br.com.mobiplus.flickr.R;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
@@ -46,7 +49,7 @@ public class PhotoViewActivity extends AppCompatActivity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private View mContentView;
+    private ImageView mContentView;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -110,9 +113,11 @@ public class PhotoViewActivity extends AppCompatActivity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
+        mContentView = (ImageView) findViewById(R.id.imageBanner);
 
+        Photo photo = (Photo) getIntent().getSerializableExtra("photo");
 
+        Picasso.with(this.getApplicationContext()).load(photo.getUrlL()).into(mContentView);
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
