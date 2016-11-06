@@ -2,10 +2,10 @@ package br.com.mobiplus.flickr.rest;
 
 import java.util.Map;
 
-import br.com.mobiplus.flickr.model.PeopleInfoResult;
-import br.com.mobiplus.flickr.model.PhotoCommentsResult;
-import br.com.mobiplus.flickr.model.PhotoInfoResult;
-import br.com.mobiplus.flickr.model.PhotoSearchResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PeopleInfoResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PhotoCommentsResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PhotoInfoResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PhotoSearchResult;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.QueryMap;

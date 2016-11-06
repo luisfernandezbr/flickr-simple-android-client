@@ -8,10 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import br.com.mobiplus.flickr.model.PeopleInfoResult;
-import br.com.mobiplus.flickr.model.PhotoCommentsResult;
-import br.com.mobiplus.flickr.model.PhotoInfoResult;
-import br.com.mobiplus.flickr.model.PhotoSearchResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PeopleInfoResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PhotoCommentsResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PhotoInfoResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.PhotoSearchResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.android.AndroidLog;
@@ -86,7 +86,7 @@ public class RetrofitFacade {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("method", method);
         queryParams.put("photo_id", photoId);
-        
+
         service.getPhotoCommentList(queryParams, callback);
 
     }
