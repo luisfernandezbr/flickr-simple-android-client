@@ -1,13 +1,16 @@
 package br.com.mobiplus.flickr.mvp.view;
 
 import android.app.Activity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import br.com.mobiplus.flickr.R;
+import br.com.mobiplus.flickr.mvp.Events;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
+import br.com.mobiplus.mvp.otto.BusProvider;
 import br.com.mobiplus.mvp.view.BaseView;
 
 /**
@@ -31,7 +34,15 @@ public class PhotoDetailsViewImpl extends BaseView implements PhotoDetailsView {
     }
 
     @Override
-    public void onLoadData(Photo photo) {
+    public void onLoadData(final Photo photo) {
+        View view = findViewById(R.id.linearItemPhotoList);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BusProvider.getInstance().post(new Events.OnPhotoDetailClickedEvent(photo));
+            }
+        });
+
         ImageView imageBanner = (ImageView) findViewById(R.id.imageBanner);
         ImageView imageAvatar = (ImageView) findViewById(R.id.imageAvatar);
 

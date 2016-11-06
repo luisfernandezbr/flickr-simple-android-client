@@ -19,6 +19,16 @@
         </activity>
         <activity android:name=".android.activity.PhotoDetailsActivity">
         </activity>
+        <activity
+            android:name=".android.activity.PhotoViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_photo_view"
+            android:parentActivityName=".android.activity.PhotoDetailsActivity"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.mobiplus.flickr.android.activity.PhotoDetailsActivity"/>
+        </activity>
     </application>
 
 </manifest>

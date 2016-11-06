@@ -20,4 +20,17 @@ public class Events {
             return photo;
         }
     }
+
+    public static class OnPhotoDetailClickedEvent {
+
+        private Photo photo;
+
+        public OnPhotoDetailClickedEvent(Photo photo) {
+            this.photo = photo;
+        }
+
+        public Photo getPhoto() {
+            return photo;
+        }
+    }
 }

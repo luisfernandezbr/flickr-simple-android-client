@@ -3,6 +3,10 @@ package br.com.mobiplus.flickr.mvp.presenter;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.squareup.otto.Subscribe;
+
+import br.com.mobiplus.flickr.android.activity.PhotoViewActivity;
+import br.com.mobiplus.flickr.mvp.Events;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
 import br.com.mobiplus.flickr.mvp.view.PhotoDetailsView;
 import br.com.mobiplus.flickr.mvp.view.PhotoDetailsViewImpl;
@@ -33,6 +37,11 @@ public class PhotoDetailsPresenter extends BasePresenter {
 
     private void loadData() {
         view.onLoadData(photo);
+    }
+
+    @Subscribe
+    public void OnPhotoDetailClickedEvent(Events.OnPhotoDetailClickedEvent event) {
+        PhotoViewActivity.start(this.activity, event.getPhoto());
     }
 
     @Override

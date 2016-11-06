@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">flickr-simple-android-client</string>
+
+    <string name="title_activity_photo_view">PhotoViewActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
