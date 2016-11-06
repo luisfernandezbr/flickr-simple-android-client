@@ -3,10 +3,6 @@ package br.com.mobiplus.flickr.mvp.presenter;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.squareup.otto.Subscribe;
-
-import br.com.mobiplus.flickr.PhotoDetailsActivity;
-import br.com.mobiplus.flickr.mvp.Events;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
 import br.com.mobiplus.flickr.mvp.view.PhotoDetailsView;
 import br.com.mobiplus.flickr.mvp.view.PhotoDetailsViewImpl;

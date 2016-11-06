@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import com.squareup.otto.Subscribe;
 
-import br.com.mobiplus.flickr.PhotoDetailsActivity;
+import br.com.mobiplus.flickr.android.activity.PhotoDetailsActivity;
 import br.com.mobiplus.flickr.mvp.Events;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import br.com.mobiplus.flickr.mvp.view.HomeView;

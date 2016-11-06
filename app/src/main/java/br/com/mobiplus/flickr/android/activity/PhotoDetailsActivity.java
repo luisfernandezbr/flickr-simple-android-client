@@ -1,13 +1,13 @@
-package br.com.mobiplus.flickr;
+package br.com.mobiplus.flickr.android.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import br.com.mobiplus.flickr.R;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
 import br.com.mobiplus.flickr.mvp.presenter.PhotoDetailsPresenter;
-import br.com.mobiplus.flickr.mvp.view.PhotoDetailsViewImpl;
 
 public class PhotoDetailsActivity extends AppCompatActivity {
 
