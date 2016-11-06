@@ -9,7 +9,8 @@ import android.widget.Toast;
 import br.com.mobiplus.flickr.mvp.model.pojo.PeopleInfoResult;
 import br.com.mobiplus.flickr.mvp.model.pojo.PhotoCommentsResult;
 import br.com.mobiplus.flickr.mvp.model.pojo.PhotoInfoResult;
-import br.com.mobiplus.flickr.mvp.model.pojo.PhotoSearchResult;
+
+import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import br.com.mobiplus.flickr.mvp.presenter.HomePresenter;
 import br.com.mobiplus.flickr.rest.RetrofitFacade;
 import retrofit.Callback;

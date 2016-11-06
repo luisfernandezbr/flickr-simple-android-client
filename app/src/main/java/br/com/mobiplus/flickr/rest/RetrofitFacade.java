@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import br.com.mobiplus.flickr.mvp.model.pojo.PeopleInfoResult;
 import br.com.mobiplus.flickr.mvp.model.pojo.PhotoCommentsResult;
 import br.com.mobiplus.flickr.mvp.model.pojo.PhotoInfoResult;
-import br.com.mobiplus.flickr.mvp.model.pojo.PhotoSearchResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.android.AndroidLog;
@@ -35,8 +35,8 @@ public class RetrofitFacade {
         this.requestInterceptor = new RetrofitRequestInterceptor(context);
 
         final OkHttpClient okHttpClient = new OkHttpClient();
-        okHttpClient.setReadTimeout(30, TimeUnit.SECONDS);
-        okHttpClient.setConnectTimeout(10, TimeUnit.SECONDS);
+        okHttpClient.setReadTimeout(60, TimeUnit.SECONDS);
+        okHttpClient.setConnectTimeout(30, TimeUnit.SECONDS);
 
         this.gsonRestAdapter = new RestAdapter.Builder()
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -55,9 +55,10 @@ public class RetrofitFacade {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("method", method);
         queryParams.put("tags", searchTerm);
-        queryParams.put("sort","interestingness-desc");
+        queryParams.put("sort", "interestingness-desc");
+        queryParams.put("extras", "description,license,date_upload,date_taken,owner_name,icon_server,original_format,last_update,geo,tags,o_dims,views,media,path_alias,url_t,url_m,url_l,url_o");
 
-        service.getPhotosSearch(queryParams, callback);
+        service.getPhotosSearch(queryParams,callback);
     }
 
     public void requestPhotoInfo(String photoId, Callback<PhotoInfoResult> callback) {
