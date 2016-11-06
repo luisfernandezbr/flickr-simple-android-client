@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#FFF"
+    android:layout_marginBottom="@dimen/activity_vertical_margin_medium"
     android:padding="@dimen/activity_vertical_margin_small">
 
     <ImageView
         android:id="@+id/imageBanner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="160dp"
         android:layout_marginBottom="@dimen/activity_vertical_margin_small"
         android:scaleType="centerCrop"
         android:src="@drawable/temp_banner_sample"/>
@@ -20,14 +22,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
+        tools:background="#33FF00FF"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageAvatar"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="@dimen/activity_vertical_margin_small"
-            android:layout_marginRight="@dimen/activity_vertical_margin_small"
+            android:layout_marginStart="@dimen/activity_horizontal_margin_medium"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_medium"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin_medium"
+            android:layout_marginRight="@dimen/activity_horizontal_margin_medium"
             android:elevation="2dp"
             android:src="@drawable/temp_icon_avatar"
             tools:civ_border_color="#D3D3D3"
@@ -49,19 +54,20 @@
                 android:ellipsize="end"
                 android:gravity="center_vertical"
                 android:maxLines="1"
-                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textStyle="bold"
+                android:textColor="#000"
                 tools:text="Alicia Keys"/>
 
             <TextView
                 android:id="@+id/textDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin_small"
+
                 android:layout_marginEnd="@dimen/activity_vertical_margin_small"
                 android:layout_marginStart="@dimen/activity_vertical_margin_small"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
                 tools:text="No One"/>
         </LinearLayout>
     </LinearLayout>
