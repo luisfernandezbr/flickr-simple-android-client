@@ -5,7 +5,8 @@ import android.support.annotation.IdRes;
 
 import br.com.mobiplus.flickr.R;
 import br.com.mobiplus.flickr.mvp.model.pojo.Photo2;
-import br.com.mobiplus.flickr.mvp.model.pojo.PhotoSearchResult;
+import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
+import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import br.com.mobiplus.mvp.view.BaseView;
 import br.com.mobiplus.simplerecylerview.SimpleLinearRecyclerView;
 import br.com.mobiplus.simplerecylerview.adapter.OnItemClickListener;
@@ -34,12 +35,17 @@ public class HomeViewImpl extends BaseView implements HomeView {
     @Override
     public void onLoadData(PhotoSearchResult photoSearchResult) {
         SimpleLinearRecyclerView recyclerView = (SimpleLinearRecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setCollection(photoSearchResult.getPhotos().getPhoto(), new OnItemClickListener<Photo2>() {
+        recyclerView.setCollection(photoSearchResult.getPhotos().getPhoto(), new OnItemClickListener<Photo>() {
 
             @Override
-            public void onItemClick(Photo2 photo, @IdRes int idViewClicked) {
+            public void onItemClick(Photo photo, @IdRes int idViewClicked) {
 
             }
         });
+    }
+
+    @Override
+    public void onLoadDataError(int status, String message) {
+
     }
 }

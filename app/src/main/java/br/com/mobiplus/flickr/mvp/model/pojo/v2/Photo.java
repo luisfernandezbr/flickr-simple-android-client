@@ -3,12 +3,16 @@ package br.com.mobiplus.flickr.mvp.model.pojo.v2;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import br.com.mobiplus.flickr.R;
+import br.com.mobiplus.simplerecylerview.annotations.ImageAdapter;
+import br.com.mobiplus.simplerecylerview.annotations.LayoutAdapter;
+import br.com.mobiplus.simplerecylerview.annotations.TextAdapter;
+
 /**
  * Created by luis.fernandez on 11/6/16.
  */
-
+@LayoutAdapter(layoutResId = R.layout.item_home_photo_list)
 public class Photo {
-
 
     @SerializedName("id")
     @Expose
@@ -201,6 +205,7 @@ public class Photo {
         this.farm = farm;
     }
 
+    @TextAdapter(resId = R.id.textDescription)
     public String getTitle() {
         return title;
     }
@@ -305,6 +310,7 @@ public class Photo {
         this.datetakenunknown = datetakenunknown;
     }
 
+    @TextAdapter(resId = R.id.textTitle)
     public String getOwnername() {
         return ownername;
     }
@@ -457,6 +463,7 @@ public class Photo {
         this.widthM = widthM;
     }
 
+    @ImageAdapter(resId = R.id.imageBanner)
     public String getUrlL() {
         return urlL;
     }
@@ -559,5 +566,10 @@ public class Photo {
 
     public void setGeoIsPublic(int geoIsPublic) {
         this.geoIsPublic = geoIsPublic;
+    }
+
+    @ImageAdapter(resId = R.id.imageAvatar)
+    public String getAvatarUrl() {
+        return String.format("http://farm%s.staticflickr.com/%s/buddyicons/%s.jpg", iconfarm, iconserver, owner);
     }
 }
