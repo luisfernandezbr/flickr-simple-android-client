@@ -2,9 +2,7 @@ package br.com.mobiplus.flickr.mvp.presenter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.widget.Toast;
 
-import br.com.mobiplus.flickr.MainActivity;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import br.com.mobiplus.flickr.mvp.view.HomeView;
 import br.com.mobiplus.flickr.mvp.view.HomeViewImpl;

@@ -3,6 +3,8 @@ package br.com.mobiplus.flickr.mvp.model.pojo.v2;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 import br.com.mobiplus.flickr.R;
 import br.com.mobiplus.simplerecylerview.annotations.ImageAdapter;
 import br.com.mobiplus.simplerecylerview.annotations.LayoutAdapter;
@@ -12,7 +14,7 @@ import br.com.mobiplus.simplerecylerview.annotations.TextAdapter;
  * Created by luis.fernandez on 11/6/16.
  */
 @LayoutAdapter(layoutResId = R.layout.item_home_photo_list)
-public class Photo {
+public class Photo implements Serializable {
 
     @SerializedName("id")
     @Expose

@@ -3,8 +3,8 @@ package br.com.mobiplus.flickr.mvp.view;
 import android.app.Activity;
 import android.support.annotation.IdRes;
 
+import br.com.mobiplus.flickr.PhotoDetailsActivity;
 import br.com.mobiplus.flickr.R;
-import br.com.mobiplus.flickr.mvp.model.pojo.Photo2;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.Photo;
 import br.com.mobiplus.flickr.mvp.model.pojo.v2.PhotoSearchResult;
 import br.com.mobiplus.mvp.view.BaseView;
@@ -24,7 +24,7 @@ public class HomeViewImpl extends BaseView implements HomeView {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_main;
+        return R.layout.activity_home;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class HomeViewImpl extends BaseView implements HomeView {
 
             @Override
             public void onItemClick(Photo photo, @IdRes int idViewClicked) {
-
+                PhotoDetailsActivity.start(getActivity(), photo);
             }
         });
     }

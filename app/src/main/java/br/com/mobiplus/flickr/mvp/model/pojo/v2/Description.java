@@ -5,8 +5,10 @@ package br.com.mobiplus.flickr.mvp.model.pojo.v2;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 
-public class Description {
+
+public class Description implements Serializable {
 
     @SerializedName("_content")
     @Expose

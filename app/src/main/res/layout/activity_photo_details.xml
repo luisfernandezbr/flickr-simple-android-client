@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin_medium">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/item_home_photo_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:id="@+id/textDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin_medium"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="@dimen/activity_horizontal_margin_small"
+                android:textColor="#555"
+                android:textSize="12sp"
+                tools:text="There were plenty of fellow Chicago fans cheering on the Bears as they fought the Lions at Ford Field in Detroit.\n\nI'm back from my travels.  I spent time with an old high school friend (from Buffalo) in Toronto and with old college friends (from Valpo) in Michigan.  While I did plenty of partying, I didn't do much photo taking.  Until I have a chance to get out shooting in the weeks ahead, I won't have much to post here … but I'll still be around giving you guys high fives :)"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
