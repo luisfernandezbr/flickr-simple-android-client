@@ -37,7 +37,7 @@ public class HomePresenter extends BasePresenter {
     }
 
     private void loadData(Activity activity) {
-        new RetrofitFacade(activity.getApplicationContext()).requestPhotosSearch("nfl", new Callback<PhotoSearchResult>() {
+        new RetrofitFacade(activity.getApplicationContext()).requestPhotosSearch("NBA PLAYOFFS", new Callback<PhotoSearchResult>() {
             @Override
             public void success(PhotoSearchResult photoSearchResult, Response response) {
                 homeView.onLoadData(photoSearchResult);
