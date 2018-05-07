@@ -18,7 +18,7 @@ public class RetrofitRequestInterceptor implements RequestInterceptor {
 
     @Override
     public void intercept(RequestInterceptor.RequestFacade request) {
-        request.addQueryParam("api_key", "8e5a81071eb11fcff275d8e2ddc1766b");
+        request.addQueryParam("api_key", "9ec9b81e8cc2b23405687435065313ae");
         request.addQueryParam("format", "json");
         request.addQueryParam("nojsoncallback", "1");
     }
